@@ -1,0 +1,25 @@
+<div class="container">
+  <form [formGroup]="postDisciplinaForm" (ngSubmit)="criarDisciplina()" class="form">
+    <div class="form-group">
+      <label for="nome">Nome da Disciplina</label>
+      <input id="nome" formControlName="nome" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="professor_nome">Nome do Professor</label>
+      <input id="professor_nome" formControlName="professor_nome" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="horario">Horário</label>
+      <input id="horario" formControlName="horario" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="curso_id">ID do Curso</label>
+      <input id="curso_id" formControlName="curso_id" type="number" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="postDisciplinaForm.invalid">Cadastrar</button>
+  </form>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <form [formGroup]="postUsuarioForm" (ngSubmit)="criarUsuario()" class="form">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input id="nome" formControlName="nome" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="cpf">CPF</label>
+      <input id="cpf" formControlName="cpf" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input id="telefone" formControlName="telefone" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input id="email" formControlName="email" type="email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="tipoUsuario">Tipo de Usuário</label>
+      <select id="tipoUsuario" formControlName="tipoUsuario" class="form-control">
+        <option value="ESTUDANTE">Estudante</option>
+        <option value="PROFESSOR">Professor</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="postUsuarioForm.invalid">Cadastrar</button>
+  </form>
+</div>

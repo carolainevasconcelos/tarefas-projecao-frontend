@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Lista de Tarefas</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Prazo</th>
+        <th>Status</th>
+        <th>Usuário ID</th>
+        <th>Disciplina ID</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarefa of tarefas">
+        <td>{{ tarefa.id }}</td>
+        <td>{{ tarefa.titulo }}</td>
+        <td>{{ tarefa.descricao }}</td>
+        <td>{{ tarefa.prazo }}</td>
+        <td>{{ tarefa.status }}</td>
+        <td>{{ tarefa.usuario_id }}</td>
+        <td>{{ tarefa.disciplina_id }}</td>
+        <td>
+          <button class="btn btn-warning me-2" (click)="atualizarTarefa(tarefa.id)">Atualizar</button>
+          <button class="btn btn-danger" (click)="deletarTarefa(tarefa.id)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Lista de Disciplinas</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Professor</th>
+        <th>Horário</th>
+        <th>Curso ID</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let disciplina of disciplinas">
+        <td>{{ disciplina.id }}</td>
+        <td>{{ disciplina.nome }}</td>
+        <td>{{ disciplina.professor_nome }}</td>
+        <td>{{ disciplina.horario }}</td>
+        <td>{{ disciplina.curso_id }}</td>
+        <td>
+          <button class="btn btn-warning me-2" (click)="atualizarDisciplina(disciplina.id)">Atualizar</button>
+          <button class="btn btn-danger" (click)="deletarDisciplina(disciplina.id)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

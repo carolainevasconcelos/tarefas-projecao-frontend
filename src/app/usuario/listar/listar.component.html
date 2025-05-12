@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Lista de Usuários</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>Email</th>
+        <th>Tipo de Usuário</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.cpf }}</td>
+        <td>{{ usuario.telefone }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.tipoUsuario }}</td> <!-- CORRIGIDO AQUI -->
+        <td>
+          <button class="btn btn-warning me-2" (click)="atualizarUsuario(usuario.id)">Atualizar</button>
+          <button class="btn btn-danger" (click)="deletarUsuario(usuario.id)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
