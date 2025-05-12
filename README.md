@@ -1,6 +1,6 @@
 ## Tarefas Projeção - Frontend
 
-Este é o repositório **frontend** do projeto **Tarefas Projeção**, desenvolvido em Angular. O sistema tem como objetivo auxiliar estudantes do UniProjeção na organização de tarefas acadêmicas, facilitando o gerenciamento de prazos e disciplinas.
+Este é o repositório **frontend** do projeto **Tarefas Projeção**, desenvolvido em Angular. O sistema tem como objetivo auxiliar estudantes na organização de tarefas acadêmicas, facilitando o gerenciamento de prazos e disciplinas.
 
 ## Objetivo do Projeto
 
@@ -27,7 +27,7 @@ Permitir que os estudantes tenham controle sobre suas tarefas, disciplinas e ati
 
 O frontend está estruturado por componentes e serviços responsáveis por cada entidade. As rotas e layouts estão organizados de forma que facilite a navegação e escalabilidade do projeto.
 
-##Como clonar o projeto
+## Como clonar o projeto
 
 git clone https://github.com/carolainevasconcelos/tarefas-projecao-frontend.git
 cd tarefas-projecao-frontend
@@ -54,4 +54,5 @@ Depois disso, acesse `http://localhost:4200` no navegador.
 
 ## Autora
 
-Feito por 
+Desenvolvido por [@carolainevasconcelos](https://github.com/carolainevasconcelos) 
+
