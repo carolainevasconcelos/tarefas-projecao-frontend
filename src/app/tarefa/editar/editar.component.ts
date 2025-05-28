@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router'; 
 import { TarefaService } from '../../services/tarefa.service';
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-editar-tarefa',
+  standalone: true, 
+  imports: [ReactiveFormsModule, CommonModule, RouterModule], 
   templateUrl: './editar.component.html',
   styleUrls: ['./editar.component.css']
 })
@@ -43,7 +46,7 @@ export class EditarTarefaComponent implements OnInit {
   updateTarefa(): void {
     this.tarefaService.updateTarefa(this.id, this.formTarefa.value).subscribe((res: any) => {
       console.log(res);
-      if (res && res.id != null) {
+      if (res) { 
         this.router.navigateByUrl('/tarefa/listar');
       }
     });

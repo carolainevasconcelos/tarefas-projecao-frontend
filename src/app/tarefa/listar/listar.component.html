@@ -1,6 +1,15 @@
-<div class="container">
-  <h2>Lista de Tarefas</h2>
-  <table class="table table-striped">
+<div class="header">
+  <img src="assets/icons/education-cap.png" alt="Educação Icon" class="header-icon">
+  <h1>Educação</h1>
+</div>
+
+<div class="management-section">
+  <div class="line"></div>
+  <h2>LISTA TAREFAS</h2> <div class="line"></div>
+</div>
+
+<div class="table-container">
+  <table class="table-custom">
     <thead>
       <tr>
         <th>ID</th>
@@ -20,13 +29,21 @@
         <td>{{ tarefa.descricao }}</td>
         <td>{{ tarefa.prazo }}</td>
         <td>{{ tarefa.status }}</td>
-        <td>{{ tarefa.usuario_id }}</td>
-        <td>{{ tarefa.disciplina_id }}</td>
-        <td>
-          <button class="btn btn-warning me-2" (click)="atualizarTarefa(tarefa.id)">Atualizar</button>
-          <button class="btn btn-danger" (click)="deletarTarefa(tarefa.id)">Deletar</button>
+        <td>{{ tarefa.usuarioId }}</td> <td>{{ tarefa.disciplinaId }}</td> <td>
+          <div class="action-buttons">
+            <button class="action-btn edit" (click)="atualizarTarefa(tarefa.id)">
+                <img src="assets/icons/edit-icon.png" alt="Editar">
+            </button>
+            <button class="action-btn delete" (click)="deletarTarefa(tarefa.id)">
+                <img src="assets/icons/delete-icon.png" alt="Deletar">
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<div class="footer-copyright">
+  <p>© Carolaine Vasconcelos - 2025</p>
 </div>

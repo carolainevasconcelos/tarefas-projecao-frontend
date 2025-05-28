@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-editar',
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './editar.component.html',
   styleUrls: ['./editar.component.css']
 })
@@ -34,7 +37,8 @@ export class EditarComponent implements OnInit {
   }
 
   getUsuarioById(): void {
-    this.usuarioService.getUsuariosById(this.id).subscribe((res: any) => {
+    // CORRIGIDO: Chamando 'getUsuarioById' (singular) como declarado no serviço
+    this.usuarioService.getUsuarioById(this.id).subscribe((res: any) => {
       this.formUsuario.patchValue(res);
     });
   }
@@ -42,7 +46,7 @@ export class EditarComponent implements OnInit {
   updateUsuario(): void {
     this.usuarioService.updateUsuario(this.id, this.formUsuario.value).subscribe((res: any) => {
       console.log(res);
-      if (res && res.id != null) {
+      if (res) {
         this.router.navigateByUrl('/usuario/listar');
       }
     });

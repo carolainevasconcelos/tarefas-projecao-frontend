@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; 
 import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-criar',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule], 
   templateUrl: './criar.component.html',
   styleUrls: ['./criar.component.css'],
 })
@@ -20,15 +21,15 @@ export class CriarComponent implements OnInit {
       cpf: [null, [Validators.required]],
       telefone: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
-      tipoUsuario: [null, Validators.required]
+      tipo_usuario: [null, Validators.required] 
     });
   }
 
   criarUsuario(){
     console.log(this.postUsuarioForm.value);
-    this.usuarioService.postUsuarios(this.postUsuarioForm.value).subscribe((res)=>{
+    this.usuarioService.addUsuario(this.postUsuarioForm.value).subscribe((res)=>{ 
       console.log(res);
     })
   }
-  
+
 }

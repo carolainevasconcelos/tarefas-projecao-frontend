@@ -1,27 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs'; 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class UsuarioService {
-  private apiUrl = 'http://localhost:8080/usuario/';
+  private apiUrl = 'http://localhost:8080/usuario'; 
 
   constructor(private http: HttpClient) {}
 
-  getUsuarios() {
+  getUsuarios(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  addUsuario(usuario: any) {
+  getUsuarioById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  addUsuario(usuario: any): Observable<any> { 
     return this.http.post(this.apiUrl, usuario);
   }
 
-  updateUsuario(usuario: any) {
-    return this.http.put(this.apiUrl, usuario); // ✅ Corrigido
+  updateUsuario(id: number, usuario: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, usuario);
   }
 
-  deleteUsuario(id: number) {
-    return this.http.delete(`${this.apiUrl}${id}`);
+  deleteUsuario(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`); 
   }
 }

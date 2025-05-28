@@ -1,1 +1,51 @@
-<p>editar works!</p>
+<div class="header">
+  <img src="assets/icons/education-cap.png" alt="Educação Icon" class="header-icon">
+  <h1>Educação</h1>
+</div>
+
+<div class="management-section">
+  <div class="line"></div>
+  <h2>EDITAR TAREFA</h2> <div class="line"></div>
+</div>
+
+<div class="form-container">
+  <form [formGroup]="formTarefa" (ngSubmit)="updateTarefa()" class="form"> <div class="form-group">
+      <label for="titulo">Título</label>
+      <input id="titulo" formControlName="titulo" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" formControlName="descricao" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="prazo">Prazo</label>
+      <input id="prazo" formControlName="prazo" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" formControlName="status" class="form-control">
+        <option value="PENDENTE">Pendente</option>
+        <option value="EM ANDAMENTO">Em Andamento</option>
+        <option value="CONCLUÍDO">Concluído</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="usuario_id">ID do Usuário</label>
+      <input id="usuario_id" formControlName="usuario_id" type="number" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="disciplina_id">ID da Disciplina</label>
+      <input id="disciplina_id" formControlName="disciplina_id" type="number" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formTarefa.invalid">Atualizar</button> </form>
+</div>
+
+<div class="footer-copyright">
+  <p>© Carolaine Vasconcelos - 2025</p>
+</div>

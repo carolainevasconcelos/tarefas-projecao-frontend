@@ -1,6 +1,15 @@
-<div class="container">
-  <h2>Lista de Usuários</h2>
-  <table class="table table-striped">
+<div class="header">
+  <img src="assets/icons/education-cap.png" alt="Educação Icon" class="header-icon">
+  <h1>Educação</h1>
+</div>
+
+<div class="management-section">
+  <div class="line"></div>
+  <h2>LISTA USUÁRIOS</h2> <div class="line"></div>
+</div>
+
+<div class="table-container">
+  <table class="table-custom">
     <thead>
       <tr>
         <th>ID</th>
@@ -19,12 +28,21 @@
         <td>{{ usuario.cpf }}</td>
         <td>{{ usuario.telefone }}</td>
         <td>{{ usuario.email }}</td>
-        <td>{{ usuario.tipoUsuario }}</td> <!-- CORRIGIDO AQUI -->
-        <td>
-          <button class="btn btn-warning me-2" (click)="atualizarUsuario(usuario.id)">Atualizar</button>
-          <button class="btn btn-danger" (click)="deletarUsuario(usuario.id)">Deletar</button>
+        <td>{{ usuario.tipo_usuario }}</td> <td>
+          <div class="action-buttons">
+            <button class="action-btn edit" (click)="atualizarUsuario(usuario.id)">
+                <img src="assets/icons/edit-icon.png" alt="Editar">
+            </button>
+            <button class="action-btn delete" (click)="deletarUsuario(usuario.id)">
+                <img src="assets/icons/delete-icon.png" alt="Deletar">
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<div class="footer-copyright">
+  <p>© Carolaine Vasconcelos - 2025</p>
 </div>

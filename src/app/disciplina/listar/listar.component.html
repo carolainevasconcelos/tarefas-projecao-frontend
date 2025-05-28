@@ -1,6 +1,15 @@
-<div class="container">
-  <h2>Lista de Disciplinas</h2>
-  <table class="table table-striped">
+<div class="header">
+  <img src="assets/icons/education-cap.png" alt="Educação Icon" class="header-icon">
+  <h1>Educação</h1>
+</div>
+
+<div class="management-section">
+  <div class="line"></div>
+  <h2>LISTA DISCIPLINAS</h2> <div class="line"></div>
+</div>
+
+<div class="table-container">
+  <table class="table-custom">
     <thead>
       <tr>
         <th>ID</th>
@@ -17,12 +26,21 @@
         <td>{{ disciplina.nome }}</td>
         <td>{{ disciplina.professor_nome }}</td>
         <td>{{ disciplina.horario }}</td>
-        <td>{{ disciplina.curso_id }}</td>
-        <td>
-          <button class="btn btn-warning me-2" (click)="atualizarDisciplina(disciplina.id)">Atualizar</button>
-          <button class="btn btn-danger" (click)="deletarDisciplina(disciplina.id)">Deletar</button>
+        <td>{{ disciplina.cursoId }}</td> <td>
+          <div class="action-buttons">
+            <button class="action-btn edit" (click)="atualizarDisciplina(disciplina.id)">
+                <img src="assets/icons/edit-icon.png" alt="Editar">
+            </button>
+            <button class="action-btn delete" (click)="deletarDisciplina(disciplina.id)">
+                <img src="assets/icons/delete-icon.png" alt="Deletar">
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<div class="footer-copyright">
+  <p>© Carolaine Vasconcelos - 2025</p>
 </div>

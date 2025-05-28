@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router'; 
 import { CursoService } from '../../services/curso.service';
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-editar-curso',
+  standalone: true, 
+  imports: [ReactiveFormsModule, CommonModule, RouterModule], 
   templateUrl: './editar.component.html',
   styleUrls: ['./editar.component.css']
 })
@@ -39,8 +42,8 @@ export class EditarCursoComponent implements OnInit {
   updateCurso(): void {
     this.cursoService.updateCurso(this.id, this.formCurso.value).subscribe((res: any) => {
       console.log(res);
-      if (res && res.id != null) {
-        this.router.navigateByUrl('/curso/listar');  
+      if (res) { 
+        this.router.navigateByUrl('/curso/listar');
       }
     });
   }

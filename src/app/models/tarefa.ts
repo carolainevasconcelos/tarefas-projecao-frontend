@@ -1,9 +1,9 @@
 export interface Tarefa {
-  id?: number;
+  id?: number; 
   titulo: string;
-  descricao: string; 
-  prazo: string;
-  status: string;   
-  usuario_id?: number;        
-  disciplina_id?: number;
+  descricao: string;
+  prazo: string; 
+  status: string;
+  usuarioId?: number; 
+  disciplinaId?: number;
 }

@@ -1,0 +1,155 @@
+/* Cores da Paleta */
+/* Dark Slate Gray: #28405B */
+/* Weldon Blue: #779EA9 */
+/* Azureish White: #E1EBED */
+/* Dark Sky Blue: #8CC0CF */
+/* Crystal Blue: #60A7BD */
+
+/* Reset e estrutura básica */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #E1EBED;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Borda lateral decorativa */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom, #8a2be2, #da70d6);
+  z-index: 100;
+}
+
+/* Cabeçalho */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px 40px;
+  background-color: #E1EBED;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  z-index: 10;
+}
+
+.header-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+}
+
+.header h1 {
+  font-family: 'Times New Roman', serif;
+  font-size: 2em;
+  color: #333;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Conteúdo principal */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Seção de gerenciamento */
+.management-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 0 40px;
+}
+
+.management-section h2 {
+  font-family: 'Times New Roman', serif;
+  font-size: 2.8em;
+  color: #555;
+  margin: 0 25px;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1.5px;
+  background-color: #ccc;
+  max-width: 250px;
+}
+
+/* Container dos botões */
+.options-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-grow: 1;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Botões */
+.option-button {
+  background-color: #8CC0CF;
+  color: #ffffff;
+  font-family: 'Times New Roman', serif;
+  font-size: 1.5em;
+  padding: 50px 55px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 200px;
+  max-width: 280px;
+  min-height: 100px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.option-button:hover {
+  background-color: #60A7BD;
+  transform: translateY(-2px);
+}
+
+/* Footer fixado ao final da página (quando necessário) */
+.footer-copyright {
+  text-align: center;
+  padding: 30px;
+  background-color: #8CC0CF;
+  color: #E1EBED;
+  font-size: 1em;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+  margin-top: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .options-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .option-button {
+    padding: 30px 40px;
+    font-size: 1.3em;
+    width: 80%;
+    max-width: 300px;
+  }
+}

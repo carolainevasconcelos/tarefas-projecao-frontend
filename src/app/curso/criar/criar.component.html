@@ -1,4 +1,15 @@
-<div class="container">
+<div class="header">
+  <img src="assets/icons/education-cap.png" alt="Educação Icon" class="header-icon">
+  <h1>Educação</h1>
+</div>
+
+<div class="management-section">
+  <div class="line"></div>
+  <h2>CADASTRAR CURSO</h2>
+  <div class="line"></div>
+</div>
+
+<div class="form-container">
   <form [formGroup]="postCursoForm" (ngSubmit)="criarCurso()" class="form">
     <div class="form-group">
       <label for="nome">Nome do Curso</label>
@@ -13,4 +24,6 @@
     <button type="submit" class="btn btn-primary" [disabled]="postCursoForm.invalid">Cadastrar</button>
   </form>
 </div>
-<p>criar works!</p>
+<div class="footer-copyright">
+  <p>© Carolaine Vasconcelos - 2025</p>
+</div>

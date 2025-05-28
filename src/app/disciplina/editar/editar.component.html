@@ -1,1 +1,37 @@
-<p>editar works!</p>
+<div class="header">
+  <img src="assets/icons/education-cap.png" alt="Educação Icon" class="header-icon">
+  <h1>Educação</h1>
+</div>
+
+<div class="management-section">
+  <div class="line"></div>
+  <h2>EDITAR DISCIPLINA</h2> <div class="line"></div>
+</div>
+
+<div class="form-container">
+  <form [formGroup]="formDisciplina" (ngSubmit)="updateDisciplina()" class="form"> <div class="form-group">
+      <label for="nome">Nome da Disciplina</label>
+      <input id="nome" formControlName="nome" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="professor_nome">Nome do Professor</label>
+      <input id="professor_nome" formControlName="professor_nome" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="horario">Horário</label>
+      <input id="horario" formControlName="horario" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="curso_id">ID do Curso</label>
+      <input id="curso_id" formControlName="curso_id" type="number" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formDisciplina.invalid">Atualizar</button> </form>
+</div>
+
+<div class="footer-copyright">
+  <p>© Carolaine Vasconcelos - 2025</p>
+</div>

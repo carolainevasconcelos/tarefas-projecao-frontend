@@ -1,0 +1,226 @@
+/* Paleta de Cores */
+/* Dark Slate Gray: #28405B */
+/* Weldon Blue: #779EA9 */
+/* Azureish White: #E1EBED */
+/* Dark Sky Blue: #8CC0CF */
+/* Crystal Blue: #60A7BD */
+
+/* Estilos globais */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+body {
+  font-family: Arial, sans-serif !important;
+  background-color: #E1EBED !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+}
+
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 8px !important;
+  height: 100% !important;
+  background: linear-gradient(to bottom, #8a2be2, #da70d6) !important;
+  z-index: 100 !important;
+}
+
+/* Cabeçalho */
+.header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 15px 40px !important;
+  background-color: #E1EBED !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.header-icon {
+  width: 45px !important;
+  height: 45px !important;
+  margin-right: 15px !important;
+}
+
+.header h1 {
+  font-family: 'Times New Roman', serif !important;
+  font-size: 2em !important;
+  color: #333 !important;
+  margin: 0 !important;
+  font-weight: normal !important;
+}
+
+/* Seção de gestão */
+.management-section {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 60px 0 40px !important;
+}
+
+.management-section h2 {
+  font-family: 'Times New Roman', serif !important;
+  font-size: 2.8em !important;
+  color: #555 !important;
+  margin: 0 25px !important;
+  white-space: nowrap !important;
+  letter-spacing: 2px !important;
+  font-weight: normal !important;
+}
+
+.line {
+  flex-grow: 1 !important;
+  height: 1.5px !important;
+  background-color: #ccc !important;
+  max-width: 250px !important;
+}
+
+/* Rodapé */
+.footer-copyright {
+  text-align: center !important;
+  padding: 15px !important;
+  background-color: #779EA9 !important;
+  color: #E1EBED !important;
+  font-size: 0.9em !important;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.05) !important;
+  position: relative !important;
+  margin-top: auto !important;
+}
+
+/* Formulário de Cadastro */
+.form-container {
+  background-color: #fff !important;
+  border-radius: 15px !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+  padding: 50px 60px !important;
+  max-width: 600px !important;
+  width: 90% !important;
+  margin: 50px auto !important;
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+.form {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.form-container h2 {
+  font-family: 'Times New Roman', serif !important;
+  font-size: 2.2em !important;
+  color: #555 !important;
+  margin-bottom: 30px !important;
+  text-align: center !important;
+  font-weight: normal !important;
+}
+
+.form-group {
+  width: 100% !important;
+  margin-bottom: 25px !important;
+}
+
+.form-group label {
+  display: block !important;
+  font-family: 'Times New Roman', serif !important;
+  font-size: 1.15em !important;
+  color: #666 !important;
+  margin-bottom: 10px !important;
+}
+
+.form-control {
+  width: calc(100% - 24px) !important;
+  padding: 12px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px !important;
+  font-size: 1.1em !important;
+  font-family: Arial, sans-serif !important;
+  box-sizing: border-box !important;
+  height: 50px !important;
+}
+
+textarea.form-control {
+  resize: vertical !important;
+  min-height: 100px !important;
+  height: auto !important;
+}
+
+.form-control:focus {
+  border-color: #8CC0CF !important;
+  outline: none !important;
+  box-shadow: 0 0 5px rgba(140, 192, 207, 0.5) !important;
+}
+
+.btn-primary {
+  background-color: #28405B !important;
+  color: #fff !important;
+  padding: 15px 35px !important;
+  border: none !important;
+  border-radius: 5px !important;
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease, transform 0.2s ease !important;
+  margin-top: 30px !important;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #60A7BD !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-primary:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .header, .footer-copyright {
+    padding: 10px 20px !important;
+  }
+
+  .form-container {
+    margin: 30px 20px !important;
+    padding: 30px 20px !important;
+    max-width: 100% !important;
+  }
+
+  .form-container h2 {
+    font-size: 1.8em !important;
+  }
+
+  .form-group label,
+  .form-control,
+  .btn-primary {
+    font-size: 0.9em !important;
+  }
+
+  .form-control {
+    padding: 10px !important;
+    height: 40px !important;
+  }
+
+  textarea.form-control {
+    min-height: 70px !important;
+  }
+
+  .btn-primary {
+    padding: 10px 20px !important;
+  }
+}

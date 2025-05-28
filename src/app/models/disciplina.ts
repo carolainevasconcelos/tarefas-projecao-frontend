@@ -1,7 +1,7 @@
 export interface Disciplina {
   id?: number;
   nome: string;
-  professor: string;
+  professor_nome: string; 
   horario: string;
-  curso_id?: number;
+  cursoId?: number; 
 }

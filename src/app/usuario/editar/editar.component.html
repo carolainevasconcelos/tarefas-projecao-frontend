@@ -1,1 +1,45 @@
-<p>editar works!</p>
+<div class="header">
+  <img src="assets/icons/education-cap.png" alt="Educação Icon" class="header-icon">
+  <h1>Educação</h1>
+</div>
+
+<div class="management-section">
+  <div class="line"></div>
+  <h2>EDITAR USUÁRIO</h2> <div class="line"></div>
+</div>
+
+<div class="form-container">
+  <form [formGroup]="formUsuario" (ngSubmit)="updateUsuario()" class="form"> <div class="form-group">
+      <label for="nome">Nome</label>
+      <input id="nome" formControlName="nome" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="cpf">CPF</label>
+      <input id="cpf" formControlName="cpf" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input id="telefone" formControlName="telefone" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input id="email" formControlName="email" type="email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="tipo_usuario">Tipo de Usuário</label>
+      <select id="tipo_usuario" formControlName="tipo_usuario" class="form-control">
+        <option value="ESTUDANTE">Estudante</option>
+        <option value="PROFESSOR">Professor</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formUsuario.invalid">Atualizar</button> </form>
+</div>
+
+<div class="footer-copyright">
+  <p>© Carolaine Vasconcelos - 2025</p>
+</div>
