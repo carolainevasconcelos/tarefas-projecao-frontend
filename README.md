@@ -45,6 +45,8 @@ npm install
 # Execute a aplicação
 ng serve
 
+**Obs.: Para que o frontend funcione corretamente, o backend (Tarefas Projeção - Backend) deve estar rodando simultaneamente.**
+
 Depois disso, acesse `http://localhost:4200` no navegador.
 
 ## Documentação complementar
